@@ -4,7 +4,7 @@
 		<title>食品登録</title>
 		<script src="https://d.line-scdn.net/liff/1.0/sdk.js"></script>
 		<meta charset="UTF-8">
-		<link rel="stylesheet" type="text/css" href="honoka/css/bootstrap.css">
+		<link rel="stylesheet" type="text/css" href="../honoka/css/bootstrap.css">
 		<link rel="stylesheet" type="text/css" href="input.css">
 	</head>
 
@@ -13,7 +13,7 @@
 			<form>
 				<div class="move">
 					<button id="back">戻る</button>
-					<input type="submit" value="送信する" class="finish">
+					
 				</div>
 			</form>
 			<div class="titles"><h1>食品登録</h1></div>
@@ -22,7 +22,7 @@
 		
 		
 		<form action="#" method="POST">
-			<div class="rakutin">
+			<div class="history">
 				<button class="rireki">履歴</button>
 			</div>
 			<div class="photo">
@@ -35,7 +35,9 @@
 			</div>
 			<div class="limit">
 				<h3>期限</h3>
+				<input type="date" name="date">
 			</div>
+			<input type="submit" value="送信する" class="finish" onclick="location.href='../stoclist.html'"></input>
 		</form>	
 		
 		<footer>

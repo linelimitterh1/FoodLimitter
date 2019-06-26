@@ -32,5 +32,10 @@ div{
 }
 
 .finish {
-    margin-left: 90%; 
+    margin-left: 3%; 
+}
+
+footer {
+    margin: 2%;
+    padding: 1%;
 }
