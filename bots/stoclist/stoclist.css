@@ -1,4 +1,12 @@
 @charset "utf-8";
+/*====================
+スマホを基本設計にする
+ - 〜479px：スマートフォン縦
+ - 480px〜599px：スマートフォン横
+ - 600px〜959px：タブレット
+ - 960px〜1279px：小型PC
+ - 1280px〜：大型PC
+====================*/
 body {
     margin: 2%;
     padding: 1%;
@@ -11,36 +19,109 @@ div{
     padding: 1%;
 }
 
+.back {
+    margin-left: 3%;
+    float: left;
+}
+
+.score {
+    margin-left: 77%;
+}
+
+.check {
+    width: 50%;
+    height: 50%;
+}
+
 table{
     width: 100%;
     border-collapse: collapse;
 }
   
 table tr *:nth-child(1){
+    /*
     background: #FFFF00;
+    */
 }
   
 table tr *:nth-child(2){
-    background: #FFFF33;
+    display: block;
 }
   
 table tr *:nth-child(3){
-    background: #FFFF66;
+    display: block;
 }
   
 table tr *:nth-child(4){
-    background: #FFFF99;
+    display: inline-block;
 }
 
 table tr *:nth-child(5){
-    background: #FFFFCC;
+    display: inline-block;
 }
-  
+
+table tr *:nth-child(6){
+    display: inline-block;
+}
+
 table th,table td{
     color:#444444;
     border:solid 1px white;
     text-align: center;
     padding: 10px 0;
+}
+@media screen and (max-width:500px) { 
+    .check {
+        width: 30%;
+        height: 30%;
+    }
+    table{
+        width: 100%;
+        border-collapse: collapse;
+    }
+
+    tr {
+       display:block;
+       margin-bottom: 10px;
+    }
+      
+    table tr *:nth-child(2){
+        display: block;
+    }
+      
+    table tr *:nth-child(3){
+        display: block;
+    }
+      
+    table tr *:nth-child(4){
+        display: inline-block;
+    }
+    
+    table tr *:nth-child(5){
+        display: inline-block;
+    }
+
+    table tr *:nth-child(6){
+        display: inline-block;
+    }
+
+    th {
+        display:block;
+        width: 100%;
+    }
+
+    td {
+        width: 90%;
+        margin-left: 10%;
+        border:none;
+    }
+      
+    table th,table td{
+        color:#444444;
+        border:solid 1px white;
+        text-align: center;
+        padding: 10px 0;
+    }
 }
 
 .titleba{
