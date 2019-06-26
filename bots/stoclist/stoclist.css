@@ -1,0 +1,65 @@
+@charset "utf-8";
+body {
+    margin: 2%;
+    padding: 1%;
+    font-family: 'ＭＳ Ｐゴシック','MS PGothic',
+    'ヒラギノ丸ゴ ProN','Hiragino Maru Gothic ProN',
+    'Hiragino Kaku Gothic ProN','ヒラギノ角ゴ ProN W3','Roboto',sans-serif;
+}
+
+div{
+    padding: 1%;
+}
+
+table{
+    width: 100%;
+    border-collapse: collapse;
+}
+  
+table tr *:nth-child(1){
+    background: #FFFF00;
+}
+  
+table tr *:nth-child(2){
+    background: #FFFF33;
+}
+  
+table tr *:nth-child(3){
+    background: #FFFF66;
+}
+  
+table tr *:nth-child(4){
+    background: #FFFF99;
+}
+
+table tr *:nth-child(5){
+    background: #FFFFCC;
+}
+  
+table th,table td{
+    color:#444444;
+    border:solid 1px white;
+    text-align: center;
+    padding: 10px 0;
+}
+
+.titleba{
+    background-color:#ffc68e;
+    margin-left: calc(((100vw - 100%) / 2) * -1);
+    margin-right: calc(((100vw - 100%) / 2) * -1);
+}
+
+.titles {
+    text-align: center;
+}
+
+.now {
+    font-size: 200%;
+    text-align: center;
+}
+
+.stoclist{
+    font-size: 150%;
+    text-align: center;
+    
+}
