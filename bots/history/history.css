@@ -1,12 +1,13 @@
 @charset "utf-8";
 /*====================
 スマホを基本設計にする
- - 〜479px：スマートフォン縦
+ - 〜479px：スマートフォン縦  <----基本はこれ
  - 480px〜599px：スマートフォン横
  - 600px〜959px：タブレット
  - 960px〜1279px：小型PC
  - 1280px〜：大型PC
 ====================*/
+
 body {
     margin: 2%;
     padding: 1%;
@@ -43,7 +44,7 @@ div{
     float: left;
 }
 
-.score {
+.input {
     display: block;
     margin-left: 70%;
 }
@@ -86,34 +87,7 @@ table th,table td{
     text-align: center;
     padding: 10px 0;
 }
-
-.titleba{
-    background-color:#ffc68e;
-    margin-left: calc(((100vw - 100%) / 2) * -1);
-    margin-right: calc(((100vw - 100%) / 2) * -1);
-}
-
-.titles {
-    text-align: center;
-}
-
-.now {
-    font-size: 200%;
-    text-align: center;
-}
-
-.stoclists{
-    font-size: 150%;
-    text-align: center;
-    
-}
-
 @media screen and (max-width:500px) { 
-    .now {
-        font-size: 150%;
-        text-align: center;
-    }
-
     .check {
         width: 30%;
         height: 30%;
@@ -163,3 +137,18 @@ table th,table td{
     }
 }
 
+.titleba{
+    background-color:#ffc68e;
+    margin-left: calc(((100vw - 100%) / 2) * -1);
+    margin-right: calc(((100vw - 100%) / 2) * -1);
+}
+
+.titles {
+    text-align: center;
+}
+
+.histories{
+    font-size: 150%;
+    text-align: center;
+    
+}
