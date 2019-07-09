@@ -10,17 +10,12 @@
 
 	<body>
 		<div class="titleba">
-			<form>
-				<div class="move">
-					<button id="back">戻る</button>
-					
+				<div class="button_history">
+						<button class="back" onclick="location.href='/'">戻る</button>
+						<button class="rireki" onclick="location.href='/history'">履歴</button>
 				</div>
-			</form>
+				
 			<div class="titles"><h1><%= title %></h1></div>
-		</div>
-		
-		<div class="button_history">
-			<button class="rireki" onclick="location.href='/history'">履歴</button>
 		</div>
 		
 		<form action="#" method="POST">
