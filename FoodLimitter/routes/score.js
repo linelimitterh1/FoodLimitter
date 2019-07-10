@@ -1,5 +1,6 @@
 var express =require('express');
 var router = express.Router();
+
 var score = 20;
 
 //スコアの表示の分岐
