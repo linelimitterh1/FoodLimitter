@@ -1,15 +1,17 @@
 var express =require('express');
 var router = express.Router();
 var score = 20;
-if(score>20)
-var good = /images/good.png;
+
+var mark = '/images/nomal.png';
+if(score>=20)
+mark = '/images/good.png';
 
 
 
 router.get('/',(req,res,next) =>{
     var data = {
         title: "スコア",
-        
+        img: mark
 
     };
     res.render('score',data);

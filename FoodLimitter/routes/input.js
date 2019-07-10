@@ -1,6 +1,8 @@
 var express =require('express');
 var router = express.Router();
 
+var img = 
+
 router.get('/',(req,res,next) =>{
     var data = {
         title: "食品登録",
