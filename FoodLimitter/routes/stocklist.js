@@ -5,7 +5,7 @@ var router = express.Router();
 require('date-utils');
 
 var dt = new Date();
-var now_date = dt.toFormat("YYYY年MM月DD日dddd")
+var now_date = dt.toFormat("YYYY年MM月DD日(DDD)")
 
 router.get('/',(req,res,next) =>{
 	var data ={
