@@ -12,6 +12,10 @@ var score = require('./routes/score');
 var stocklist = require('./routes/stocklist');
 var input = require('./routes/input');
 
+
+var firebase = require("firebase/app");
+require("firebase/firestore");
+
 var firebaseConfig = {
   apiKey: " AIzaSyDJgdd63od8RtzlR8c-vSM9pOFbUfj7zLk ",
   authDomain: "die-h1-test.firebaseapp.com",
@@ -21,8 +25,9 @@ var firebaseConfig = {
   messagingSenderId: "sender-id",
 };
 
-
 var app = express();
+
+app.use(express.static('images'));
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
