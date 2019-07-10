@@ -11,7 +11,6 @@ router.get('/',(req,res,next) =>{
 	var data ={
 		title: "登録一覧",
 		now_date: now_date
-
 	}
 	res.render('stocklist',data);
 	});
