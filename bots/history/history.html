@@ -1,31 +1,25 @@
 <!DOCTYPE html>
 <html lang=ja>
 	<head>
-		<title>登録一覧</title>
+		<title>履歴</title>
         <script src="https://d.line-scdn.net/liff/1.0/sdk.js"></script>
-        <script src="stoclist.js" type="text/javascript"></script>
+        <script src="history.js" type="text/javascript"></script>
 		<meta charset="UTF-8">
 		<link rel="stylesheet" type="text/css" href="../honoka/css/bootstrap.css">
-		<link rel="stylesheet" type="text/css" href="stoclist.css">
+		<link rel="stylesheet" type="text/css" href="history.css">
 	</head>
 
 	<body>
 		<div class="titleba">
 			<div class="move">
                 <button class="back">戻る</button>
-                <button class="score" onclick="location.href='../score/score.html'">スコア</button>
+                <button class="input" onclick="location.href='../input/input.html'">完了</button>
 			</div>
 			
-			<div class="titles"><h1>登録一覧</h1></div>
+			<div class="titles"><h1>履歴</h1></div>
 		</div>
-        
-        <div class="now">
-            <p>
-                今日は<span id="view_today"></span>
-            </p>
-        </div>
 
-        <div class="stoclists">
+        <div class="histories">
             <table>
                 <tr>
                     <th>写真<img src="foodlimiter.png"></th>

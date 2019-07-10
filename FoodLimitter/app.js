@@ -1,3 +1,4 @@
+
 var createError = require('http-errors');
 var express = require('express');
 var path = require('path');
@@ -11,8 +12,18 @@ var score = require('./routes/score');
 var stocklist = require('./routes/stocklist');
 var input = require('./routes/input');
 
+
 var firebase = require("firebase/app");
 require("firebase/firestore");
+
+var firebaseConfig = {
+  apiKey: " AIzaSyDJgdd63od8RtzlR8c-vSM9pOFbUfj7zLk ",
+  authDomain: "die-h1-test.firebaseapp.com",
+  databaseURL: "https://die-h1-test.firebaseio.com",
+  projectId: "die-h1-test",
+  storageBucket: "die-h1-test.appspot.com",
+  messagingSenderId: "sender-id",
+};
 
 var app = express();
 
