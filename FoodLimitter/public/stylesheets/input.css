@@ -1,0 +1,113 @@
+@charset "utf-8";
+/*====================
+スマホを基本設計にする
+ - 〜479px：スマートフォン縦  <----基本はこれ
+ - 480px〜599px：スマートフォン横
+ - 600px〜959px：タブレット
+ - 960px〜1279px：小型PC
+ - 1280px〜：大型PC
+====================*/
+
+body {
+    margin: 2%;
+    padding: 1%;
+    font-family: 'ＭＳ Ｐゴシック','MS PGothic',
+    'ヒラギノ丸ゴ ProN','Hiragino Maru Gothic ProN',
+    'Hiragino Kaku Gothic ProN','ヒラギノ角ゴ ProN W3','Roboto',sans-serif;
+}
+
+button {
+    display: inline-block;
+    max-width: 30%;
+    text-align: left;
+    background-color: #ffa300;
+    font-size: 100%;
+    color: #FFF;
+    text-decoration: none;
+    font-weight: bold;
+    padding: 1% 2%;
+    border-radius: 1%;
+    border-bottom: 1% solid #d37800;
+}
+
+button:active {
+    transform: translateY(1%);
+    border-bottom: none;
+}
+
+div{
+    padding: 1%;
+}
+
+.rireki {
+    margin-left: 70%; 
+}
+
+.titleba{
+    background-color:#ffc68e;
+    margin-left: calc(((100vw - 100%) / 2) * -1);
+    margin-right: calc(((100vw - 100%) / 2) * -1);
+}
+
+.titles {
+    text-align: center;
+}
+
+.rireki {
+    margin-left: 90%;
+}
+
+.move {
+    margin-left: 3%; 
+    text-align: left;
+    display: inline;
+}
+
+.finish {
+    margin-left: 3%; 
+}
+
+footer {
+    margin: 2%;
+    padding: 1%;
+}
+
+@media screen and (max-width:500px) { 
+
+    div{
+        padding: 1%;
+    }
+    
+    .rireki {
+        margin-left: 70%; 
+    }
+    
+    .titleba{
+        background-color:#ffc68e;
+        margin-left: calc(((100vw - 100%) / 2) * -1);
+        margin-right: calc(((100vw - 100%) / 2) * -1);
+    }
+    
+    .titles {
+        text-align: center;
+    }
+    
+    .rireki {
+        margin-left: 90%;
+    }
+    
+    .move {
+        margin-left: 3%; 
+        text-align: left;
+        display: inline;
+    }
+    
+    .finish {
+        margin-left: 3%; 
+    }
+    
+    footer {
+        margin: 2%;
+        padding: 1%;
+    }
+}    
