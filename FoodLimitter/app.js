@@ -11,6 +11,8 @@ var score = require('./routes/score');
 var stocklist = require('./routes/stocklist');
 var input = require('./routes/input');
 
+var firebase = require("firebase/app");
+require("firebase/firestore");
 
 var app = express();
 
