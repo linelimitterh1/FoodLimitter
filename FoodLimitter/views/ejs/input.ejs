@@ -2,7 +2,7 @@
 <html lang=ja>
 	<head>
 		<meta http-equiv="content-type" content="text/html"; charset="UTF-8">
-		<title><%= title %></title>
+		<title>食品登録</title>
 		<script src="https://d.line-scdn.net/liff/1.0/sdk.js"></script>
 		<link rel="stylesheet" type="text/css" href="/stylesheets/bootstrap.css">
 		<link rel="stylesheet" type="text/css" href="/stylesheets/input.css">
@@ -15,10 +15,10 @@
 						<button class="rireki" onclick="location.href='/history'">履歴</button>
 				</div>
 				
-			<div class="titles"><h1><%= title %></h1></div>
+			<div class="titles"><h1>食品登録</h1></div>
 		</div>
 		
-		<form action="#" method="POST">
+		<form action="/stocklist" method="POST">
 			<div class="photo">
 				<h3>写真</h3>
 				<button class="photobutton">写真を入力</button><br>
@@ -31,7 +31,7 @@
 				<h3>期限</h3>
 				<input type="date" name="date">
 			</div>
-			<input type="submit" value="送信する" class="finish" onclick="location.href='../stoclist.html'"></input>
+			<input type="submit" value="送信する" class="finish"></input>
 		</form>	
 		
 		<footer>

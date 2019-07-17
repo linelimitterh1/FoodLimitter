@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang=ja>
+	<head>
+		<meta http-equiv="content-type" content="text/html"; charset="UTF-8">
+		<title>食品登録</title>
+		<script src="https://d.line-scdn.net/liff/1.0/sdk.js"></script>
+		<link rel="stylesheet" type="text/css" href="/stylesheets/bootstrap.css">
+		<link rel="stylesheet" type="text/css" href="/stylesheets/input.css">
+	</head>
+
+	<body>
+		<div class="titleba">
+				<div class="button_history">
+						<button class="back" onclick="location.href='/'">戻る</button>
+						<button class="rireki" onclick="location.href='/history'">履歴</button>
+				</div>
+				
+			<div class="titles"><h1>食品登録</h1></div>
+		</div>
+		
+		<form action="/stocklist" method="POST">
+			<div class="photo">
+					<h3>写真</h3>
+					<input type="file" accept="image/*" capture>
+				</div>
+			<div class="name">
+				<h3>食品名</h3>
+				<input type="text">
+			</div>
+			<div class="limit">
+					<h3>期限</h3>
+					<select id="date_select">
+						<option value="use">日付あり</option>
+						<option value="no">日付なし</option>
+					</select>
+						
+					<div id="usedate" style="display:block;">
+						<input id="ex_box_a" type="date" name="date"/>
+					</div>
+					<div id="nodate" style="display:none;">
+						<input id="ex_box_a" type="month" name="month"/>
+					</div>
+						
+					<script>
+						document.getElementById("date_select").addEventListener("change", function(){
+							var age_elem = document.getElementById("date_select");
+							var s_value = age_elem.options[age_elem.selectedIndex].value;
+							var box_div_elem1 = document.getElementById("usedate");
+							var box_div_elem2 = document.getElementById("nodate");
+	
+							if(s_value == "use"){
+								box_div_elem1.style.display = 'block';
+								box_div_elem2.style.display = 'none';
+							}else{
+								box_div_elem1.style.display = 'none';
+								box_div_elem2.style.display = 'block';
+							}
+						}, false);
+					</script>
+				</div>
+			<input type="submit" value="送信する" class="finish"></input>
+		</form>	
+		
+		<footer>
+			<p>&copy; 2019 デザイン総合情報演習 H-1</p>
+		</footer>
+	</body>
+</html>

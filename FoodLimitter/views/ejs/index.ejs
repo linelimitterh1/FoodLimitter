@@ -1,12 +1,12 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title><%= title %></title>
+    <title>タイトル</title>
     <link rel='stylesheet' href='/stylesheets/style.css' />
   </head>
   <body>
-    <h1><%= title %></h1>
-    <p>Welcome to <%= title %></p>
+    <h1>タイトル</h1>
+    <p>Welcome to タイトル</p>
     <div class="button_history">
 			<button class="rireki" onclick="location.href='/history'">履歴</button>
     </div>
@@ -20,4 +20,12 @@
       <button class="score" onclick="location.href='/score'">スコア</button>
     </div>
   </body>
+  <!-- The core Firebase JS SDK is always required and must be listed first -->
+<script src="/__/firebase/6.2.4/firebase-app.js"></script>
+
+<!-- TODO: Add SDKs for Firebase products that you want to use
+     https://firebase.google.com/docs/web/setup#reserved-urls -->
+
+<!-- Initialize Firebase -->
+<script src="/__/firebase/init.js"></script>
 </html>
