@@ -16,6 +16,7 @@ var input = require('./routes/input');
 var firebase = require("firebase/app");
 require("firebase/firestore");
 
+
 var firebaseConfig = {
   apiKey: " AIzaSyDJgdd63od8RtzlR8c-vSM9pOFbUfj7zLk ",
   authDomain: "die-h1-test.firebaseapp.com",
