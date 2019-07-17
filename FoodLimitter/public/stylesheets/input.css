@@ -18,6 +18,7 @@ body {
 
 button {
     display: inline-block;
+    width: 30%;
     max-width: 30%;
     text-align: left;
     background-color: #ffa300;
