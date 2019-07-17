@@ -1,11 +1,11 @@
 const admin = require('firebase-admin');
-const funcitions = require('firebase-functions');
+//const funcitions = require('firebase-functions');
 var express =require('express');
 var router = express.Router();
 
 //setup firestore
-admin.initializeApp(funcitions.config().firebase);
-var db = admin.firestore();
+//admin.initializeApp(funcitions.config().firebase);
+///var db = admin.firestore();
 
 
 router.get('/',(req,res,next) =>{
@@ -15,7 +15,7 @@ router.get('/',(req,res,next) =>{
     }
     res.render('input',data);
 });
-//Post new users
+/*//Post new users
 router.post('/',(req,res,next) =>{
     var newData =req.body;
     var docRef = db.collection('users').doc(newData.name);
@@ -26,6 +26,6 @@ router.post('/',(req,res,next) =>{
         console.log(error);
         next(error);
     });
-})
+})*/
 
 module.exports = router;

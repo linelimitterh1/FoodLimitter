@@ -15,7 +15,7 @@ var input = require('./routes/input');
 
 var firebase = require("firebase/app");
 require("firebase/firestore");
-require('firebase-functions');
+
 
 var firebaseConfig = {
   apiKey: " AIzaSyDJgdd63od8RtzlR8c-vSM9pOFbUfj7zLk ",
