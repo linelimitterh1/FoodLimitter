@@ -1,5 +1,6 @@
 {
   "projects": {
-    "default": "die-h1-test"
+    "default": "die-h1-test",
+    "die-food": "die-h1-test"
   }
 }
