@@ -38,14 +38,9 @@ div{
     padding: 1%;
 }
 
-.back {
-    margin-left: 3%;
-    float: left;
-}
-
 .score {
     display: block;
-    margin-left: 70%;
+    margin-left: 3%;
 }
 
 .check {
@@ -115,8 +110,8 @@ table th,table td{
     }
 
     .check {
-        width: 30%;
-        height: 30%;
+        width: 35%;
+        height: 35%;
     }
 
     tr {
@@ -153,6 +148,10 @@ table th,table td{
         width: 90%;
         margin-left: 10%;
         border:none;
+    }
+
+    .options {
+        display: inline-block;
     }
       
     table th,table td{
