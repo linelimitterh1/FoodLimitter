@@ -39,8 +39,14 @@ div{
     padding: 1%;
 }
 
+.back {
+    margin-left: 3%;
+    float: left;
+}
+
 .rireki {
-    margin-left: 70%; 
+    display: block;
+    margin-left: 70%;
 }
 
 .titleba{
@@ -67,6 +73,11 @@ div{
     margin-left: 3%; 
 }
 
+input {
+    margin: 2%;
+    padding: 1%;
+}
+
 footer {
     margin: 2%;
     padding: 1%;
@@ -78,8 +89,13 @@ footer {
         padding: 1%;
     }
     
+    .back {
+        margin-left: 3%;
+        float: left;
+    }
     .rireki {
-        margin-left: 70%; 
+        display: block;
+        margin-left: 70%;
     }
     
     .titleba{
@@ -104,6 +120,11 @@ footer {
     
     .finish {
         margin-left: 3%; 
+    }
+    
+    input {
+        margin: 2%;
+        padding: 1%;
     }
     
     footer {
