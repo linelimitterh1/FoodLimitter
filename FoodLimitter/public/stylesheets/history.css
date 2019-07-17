@@ -11,18 +11,26 @@
 body {
     margin: 2%;
     padding: 1%;
+    font-size: 300%;
     font-family: 'ＭＳ Ｐゴシック','MS PGothic',
     'ヒラギノ丸ゴ ProN','Hiragino Maru Gothic ProN',
     'Hiragino Kaku Gothic ProN','ヒラギノ角ゴ ProN W3','Roboto',sans-serif;
+}
+
+h1{
+    font-size: 100%; 
+}
+
+h3 {
+    font-size: 150%;
 }
 
 button {
     display: inline-block;
     width: 30%;
     max-width: 30%;
-    text-align: left;
+    text-align: center;
     background-color: #ffa300;
-    font-size: 100%;
     color: #FFF;
     text-decoration: none;
     font-weight: bold;
@@ -50,10 +58,17 @@ div{
     margin-left: 70%;
 }
 
-.check {
-    width: 50%;
-    height: 50%;
+.titleba{
+    font-size: 150%;
+    background-color:#ffc68e;
+    margin-left: calc(((100vw - 100%) / 2) * -1);
+    margin-right: calc(((100vw - 100%) / 2) * -1);
 }
+
+.titles {
+    text-align: center;
+}
+
 
 table{
     width: 100%;
@@ -87,69 +102,4 @@ table th,table td{
     border:solid 1px white;
     text-align: center;
     padding: 10px 0;
-}
-@media screen and (max-width:500px) { 
-    .check {
-        width: 30%;
-        height: 30%;
-    }
-
-    tr {
-       display:block;
-       margin-bottom: 10px;
-    }
-      
-    table tr *:nth-child(2){
-        display: block;
-    }
-      
-    table tr *:nth-child(3){
-        display: block;
-    }
-      
-    table tr *:nth-child(4){
-        display: inline-block;
-    }
-    
-    table tr *:nth-child(5){
-        display: inline-block;
-    }
-
-    table tr *:nth-child(6){
-        display: inline-block;
-    }
-
-    th {
-        display:block;
-        width: 100%;
-    }
-
-    td {
-        width: 90%;
-        margin-left: 10%;
-        border:none;
-    }
-      
-    table th,table td{
-        color:#444444;
-        border:solid 1px white;
-        text-align: center;
-        padding: 10px 0;
-    }
-}
-
-.titleba{
-    background-color:#ffc68e;
-    margin-left: calc(((100vw - 100%) / 2) * -1);
-    margin-right: calc(((100vw - 100%) / 2) * -1);
-}
-
-.titles {
-    text-align: center;
-}
-
-.histories{
-    font-size: 150%;
-    text-align: center;
-    
 }
