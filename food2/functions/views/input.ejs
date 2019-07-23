@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang=ja>
+	<head>
+		<meta http-equiv="content-type" content="text/html"; charset="UTF-8">
+		<title><%= title %></title>
+		<script src="https://d.line-scdn.net/liff/1.0/sdk.js"></script>
+		<link rel="stylesheet" type="text/css" href="/stylesheets/bootstrap.css">
+		<link rel="stylesheet" type="text/css" href="/stylesheets/input.css">
+	</head>
+
+	<body>
+		<div class="titleba">
+				<div class="button_history">
+						<button class="back" onclick="location.href='/'">戻る</button>
+						<button class="rireki" onclick="location.href='/history'">履歴</button>
+				</div>
+				
+			<div class="titles"><h1><%= title %></h1></div>
+		</div>
+		
+		<form action="" method="post">
+			<div class="photo">
+				<h3>写真</h3>
+				<input type="file" accept="image/*" capture>
+			</div>
+			<div class="name">
+				<h3>食品名</h3>
+				<input type="text" name="name">
+			</div>
+			<div class="limit">
+				<h3>期限</h3>
+				<input type="date" name="limit">
+			</div>
+			<input type="submit" value="送信する" class="finish"></input>
+		</form>	
+		
+		<footer>
+			<p>&copy; 2019 デザイン総合情報演習 H-1</p>
+		</footer>
+		<!-- Insert these scripts at the bottom of the HTML, but before you use any Firebase services -->
+ 		<!-- Firebase App (the core Firebase SDK) is always required and must be listed first -->
+  		<script src="/__/firebase/6.2.3/firebase-app.js"></script>
+
+  		<!-- Add Firebase products that you want to use -->
+  		<script src="/__/firebase/6.2.3/firebase-auth.js"></script>
+		 <script src="/__/firebase/6.2.3/firebase-firestore.js"></script> 
+		  <script>
+				var config = {
+					apiKey: " AIzaSyDJgdd63od8RtzlR8c-vSM9pOFbUfj7zLk ",
+					authDomain: "die-h1-test.firebaseapp.com",
+					databaseURL: "https://die-h1-test.firebaseio.com",
+					projectId: "die-h1-test",
+					storageBucket: "die-h1-test.appspot.com",
+					messagingSenderId: "sender-id",
+				};
+				firebase.initializeApp(config);
+		
+				var db = firebase.firestore();
+
+				/*db.collection("TestUserID").add({
+					name:name,
+					date:limit,
+				})
+				.then(function(docRef){
+					console.log("success",docRef.id)
+				})
+				.catch(function(error){
+					console.error("Error",error);
+				});*/
+			</script>
+	</body>
+</html>
