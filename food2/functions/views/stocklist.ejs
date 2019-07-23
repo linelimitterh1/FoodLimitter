@@ -23,36 +23,13 @@
                 今日は<%= now_date %></span>
             </p>
         </div>
-        <h3><%= collection %></h3>
-
         <div class="stocklists">
             <table>
-                <tr>
-                    <th>写真</th>
-                    <td>名前</td>
-                    <td>期限 2019/04/19</td>
-                    <td>
-                        開封
-                        <img src="/images/foodlimiter.png" class="check"></img>
-                    </td>
-                    <td>
-                        消費済
-                        <img src="/images/foodlimiter.png" class="check"></img></td>
-                    <td>
-                        外部へ
-                        <img src="/images/foodlimiter.png" class="check"></img></td>
-                </tr>
-                <!--
-                <% for(var i in collection){ %>
-                    <%- include('stock_item',{val:collection[i]}) %>
-                    <% } %>
-                -->
+                <% for (var i = 0; i < collection.length; i++){ %>
+                <%- include("stock_item.ejs",collection[i]); %>
+                <% } %>
             </table>
-
         </div>
-		
-		
-		
 		<footer>
 			<p>&copy; 2019 デザイン総合情報演習 H-1</p>
 		</footer>

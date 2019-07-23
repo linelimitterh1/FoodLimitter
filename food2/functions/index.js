@@ -5,10 +5,9 @@ const path = require('path');
 require('date-utils');
 var bodyparser = require('body-parser');
 
-/*
 admin.initializeApp(functions.config().firebase);
-var db = admin.firestore();
-*/
+db = admin.firestore();
+
 const app = express();
 
 const indexRouter = require('./routes/index');
