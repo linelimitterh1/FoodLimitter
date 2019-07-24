@@ -15,15 +15,15 @@ admin.initializeApp(functions.config().firebase);
 db = admin.firestore();
 
 const app = express();
-
-app.post('/webhook', line.middleware(config), (req, res) => {
+const linebot = express();
+linebot.post('/webhook', line.middleware(config), (req, res) => {
     console.log(req.body.events);
     Promise
       .all(req.body.events.map(handleEvent))
       .then((result) => res.json(result))
       .catch((result) => console.log('error!!!'));
 });
-
+exports.linebot = functions.https.onRequest(linebot);
 const client = new line.Client(config);
 
 async function handleEvent(event) {
