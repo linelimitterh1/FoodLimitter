@@ -17,24 +17,24 @@ db = admin.firestore();
 const app = express();
 const linebot = express();
 linebot.post('/webhook', line.middleware(config), (req, res) => {
-    console.log(req.body.events);
-    Promise
-      .all(req.body.events.map(handleEvent))
-      .then((result) => res.json(result))
-      .catch((result) => console.log('error!!!'));
+  console.log(req.body.events);
+  Promise
+    .all(req.body.events.map(handleEvent))
+    .then((result) => res.json(result))
+    .catch((result) => console.log('error!!!'));
 });
-exports.linebot = functions.https.onRequest(linebot);
+
 const client = new line.Client(config);
 
 async function handleEvent(event) {
-  if (event.type !== 'message' || event.message.type !== 'text') {
-    return Promise.resolve(null);
-  }
+if (event.type !== 'message' || event.message.type !== 'text') {
+  return Promise.resolve(null);
+}
 
-  return client.replyMessage(event.replyToken, {
-    type: 'text',
-    text: event.message.text + 'を受け取りました。'
-  });
+return client.replyMessage(event.replyToken, {
+  type: 'text',
+  text: event.message.text + 'を受け取りました。'
+});
 }
 const indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');

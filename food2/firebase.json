@@ -1,10 +1,16 @@
 {
   "hosting": {
     "public": "public",
-    "rewrites":[{
-      "source":"**",
-      "function":"app"
-    }],
+    "rewrites": [
+      {
+        "source": "**",
+        "function": "app"
+      },
+      {
+        "source": "/webhook",
+        "function": "linebot"
+      }
+    ],
     "ignore": [
       "firebase.json",
       "**/.*",
