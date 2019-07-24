@@ -20,8 +20,7 @@ linebot.post('/webhook', line.middleware(config), (req, res) => {
   console.log(req.body.events);
   Promise
     .all(req.body.events.map(handleEvent))
-    .then((result) => res.json(result))
-    .catch((result) => console.log('error!!!'));
+    .then((result) => res.json(result));
 });
 
 const client = new line.Client(config);
@@ -36,6 +35,7 @@ return client.replyMessage(event.replyToken, {
   text: event.message.text + 'を受け取りました。'
 });
 }
+exports.linebot = functions.https.onRequest(linebot);
 const indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
 var history = require('./routes/history');
