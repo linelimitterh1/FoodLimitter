@@ -24,11 +24,9 @@
             </p>
         </div>
         <div class="stocklists">
-            <table>
                 <% for (var i = 0; i < collection.length; i++){ %>
                 <%- include("stock_item.ejs",collection[i]); %>
                 <% } %>
-            </table>
         </div>
 		<footer>
 			<p>&copy; 2019 デザイン総合情報演習 H-1</p>

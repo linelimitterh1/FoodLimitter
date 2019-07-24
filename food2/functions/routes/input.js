@@ -19,7 +19,7 @@ router.post('/',(req,res,next) =>{
     docRef.add({
         'name': newData.name,
         'limit': newData.limit,
-        //'timestamp': db.FieldValue.serverTimestamp(),
+        'timestamp': admin.firestore.FieldValue.serverTimestamp(),
     })
     var data = {
         title: "続けて登録",
