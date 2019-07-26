@@ -26,11 +26,20 @@ router.post('/',(req,res,next) =>{
     }
     var url = URL.createObjectURL(file);
     */
+    const file = JSON.stringify(req.file);
+    console.log(file);
+
+    var ldate;
+    if(newData.limit[1] == ""){
+        ldate = newData.limit[0];
+    }else{
+        ldate = newData.limit[1];
+    }
 
     var docRef = db.collection('TestUserID');
     docRef.add({
         'name': newData.name,
-        'limit': newData.limit,
+        'limit': ldate,
         'image': newData.picture,
         'timestamp': admin.firestore.FieldValue.serverTimestamp(),
     })
