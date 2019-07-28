@@ -8,8 +8,20 @@ const upload = multer({
 });
 
 router.get('/',(req,res,next) =>{
+    var name = "";
+    var limit = "";
+    var hisData = req.query;
+    if(hisData.name != ""){
+        name = hisData.name;
+    }
+    if(hisData.limit != ""){
+        limit = hisData.limit;
+    }
+    console.log(hisData);
     var data = {
-        title: "登録",
+        title: "入力",
+        name: name,
+        limit: limit
     }
     res.render('input',data);
 });
@@ -18,9 +30,6 @@ router.get('/',(req,res,next) =>{
 //フォームの値をfirestoreのTestUserIDに格納
 router.post('/' ,(req,res,next) =>{
     var newData =req.body;  
-    
-    
-
     var ldate;
     if(newData.limit[1] == ""){
         ldate = newData.limit[0];

@@ -29,7 +29,7 @@
 			</div>
 			<div class="food_name">
 				<h3>食品名</h3>
-				<input type="text" name="food_name">
+				<input type="text" name="food_name" value = <%= name %> >
 			</div>
 			<div class="limit">
 				<h3>期限</h3>
@@ -39,10 +39,10 @@
 				</select>
 					
 				<div id="usedate" style="display:block;">
-					<input id="ex_box_a" type="date" name="limit"/>
+					<input id="ex_box_a" type="date" name="limit" value= <%=limit %>>
 				</div>
 				<div id="nodate" style="display:none;">
-					<input id="ex_box_a" type="month" name="limit"/>
+					<input id="ex_box_a" type="month" name="limit" value= <%=limit %>>
 				</div>
 				<!--入力欄の切り替え-->
 				<script>
