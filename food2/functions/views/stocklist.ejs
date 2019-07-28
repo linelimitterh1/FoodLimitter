@@ -26,7 +26,29 @@
         </div>
         <div class="stocklists">
                 <% for (var i = 0; i < collection.length; i++){ %>
-                <%- include("stock_item.ejs",collection[i]); %>
+                    <table>
+                            <tr>
+                                <th>写真</th>
+                                <td>名前 <%= collection[i].name %></td>
+                                <td>期限 <%= collection[i].limit %></td>
+                                <td>
+                                    開封
+                                    <img src="/images/open.png" class="check"></img>
+                                </td>
+                                <td>
+                                    消費済
+                                    <form action = "" method = post>
+                                        <input type="hidden" name = "id" value = "<%= doc_id[i] %>" />
+                                        <input type="image" src="/images/eated.png" class="check" />
+                                    </form>
+                                    
+                        
+                                </td>    
+                                <td>
+                                    外部へ
+                                    <button><img src="/images/recipe.png" class="check" onclick="location.href='https://recipe.rakuten.co.jp/search/<%= collection.name %>'"></img></button></td>    
+                            </tr>
+                        </table>
                 <% } %>
         </div>
 		<footer>

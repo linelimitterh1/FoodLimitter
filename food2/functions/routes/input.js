@@ -1,8 +1,11 @@
 const admin = require('firebase-admin');
 const functions = require('firebase-functions');
+const multer = require('multer')
 var express =require('express');
 var router = express.Router();
-
+const upload = multer({
+    storage: multer.memoryStorage()
+});
 
 router.get('/',(req,res,next) =>{
     var data = {
@@ -13,21 +16,10 @@ router.get('/',(req,res,next) =>{
 
 
 //フォームの値をfirestoreのTestUserIDに格納
-router.post('/',(req,res,next) =>{
-    var newData =req.body;
-    /*
-    var foodPicture = req.querySerector("#picture");
-    foodPicture.onchange = function(event){
-        var files = event.target.files,
-            file;
-        if(files && files.length > 0) { 
-            file = files[0];
-        }
-    }
-    var url = URL.createObjectURL(file);
-    */
-    const file = JSON.stringify(req.file);
-    console.log(file);
+router.post('/' ,(req,res,next) =>{
+    var newData =req.body;  
+    
+    
 
     var ldate;
     if(newData.limit[1] == ""){
@@ -38,9 +30,9 @@ router.post('/',(req,res,next) =>{
 
     var docRef = db.collection('TestUserID');
     docRef.add({
-        'name': newData.name,
+        'name': newData.food_name,
         'limit': ldate,
-        'image': newData.picture,
+        'image': "写真",
         'timestamp': admin.firestore.FieldValue.serverTimestamp(),
     })
     var data = {

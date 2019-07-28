@@ -18,14 +18,18 @@
 			<div class="titles"><h1><%= title %></h1></div>
 		</div>
 		
-		<form action="" method="post">
+		<form action="" method="post" >
 			<div class="photo">
 				<h3>写真</h3>
-				<input type="file" accept="image/*" name = "picture" capture>
+				<input type="file" accept="image/*" name = "food_image">
+				<p>
+					<img src = about:blank alt = "" id = show_picture />
+				</p>
+				
 			</div>
-			<div class="name">
+			<div class="food_name">
 				<h3>食品名</h3>
-				<input type="text" name="name">
+				<input type="text" name="food_name">
 			</div>
 			<div class="limit">
 				<h3>期限</h3>
@@ -56,6 +60,7 @@
 							box_div_elem2.style.display = 'block';
 						}
 					}, false);
+					
 				</script>
 			</div>
 			<input type="submit" value="送信する" class="finish"></input>
