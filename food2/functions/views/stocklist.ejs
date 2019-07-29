@@ -33,7 +33,12 @@
                                 <td>期限 <%= collection[i].limit %></td>
                                 <td>
                                     開封
-                                    <img src="/images/open.png" class="check"></img>
+                                    <form action ="/delete" method = post>
+                                        <input type="hidden" name="name" value="<%= collection[i].name %>" />
+                                        <input type="hidden" name="limit" value="<%= collection[i].limit %>" />
+                                        <input type="hidden" name = "id" value = "<%= doc_id[i] %>" /> 
+                                        <input type ="image" src="/images/open.png" class="check"></img>
+                                    </form>    
                                 </td>
                                 <td>
                                     消費済
@@ -46,7 +51,7 @@
                                 </td>    
                                 <td>
                                     外部へ
-                                    <button><img src="/images/recipe.png" class="check" onclick="location.href='https://recipe.rakuten.co.jp/search/<%= collection.name %>'"></img></button></td>    
+                                    <a href="https://recipe.rakuten.co.jp/search/<%= collection[i].name %>"><img src="/images/recipe.png" class="check" </a></td>    
                             </tr>
                         </table>
                 <% } %>

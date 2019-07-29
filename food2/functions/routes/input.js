@@ -31,10 +31,10 @@ router.get('/',(req,res,next) =>{
 router.post('/' ,(req,res,next) =>{
     var newData =req.body;  
     var ldate;
-    if(newData.limit[1] == ""){
-        ldate = newData.limit[0];
-    }else{
+    if(newData.limit[0] == ""){
         ldate = newData.limit[1];
+    }else{
+        ldate = newData.limit[0];
     }
     var option = {
         url: 'https://api.line.me/v2/profile',
@@ -51,6 +51,8 @@ router.post('/' ,(req,res,next) =>{
     })
     var data = {
         title: "続けて登録",
+        name: "",
+        limit:""
     }
     res.render('input',data);
 });
