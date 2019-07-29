@@ -44,6 +44,7 @@
                                     消費済
                                     <form action = "../eaten" method = post>
                                         <input type="hidden" name="name" value="<%= collection[i].name %>" />
+                                        <input type="hidden" name="limit" value="<%= collection[i].limit %>" />
                                         <input type="hidden" name = "id" value = "<%= doc_id[i] %>" />
                                         <input type="image" src="/images/eated.png" class="check" />
                                     </form>

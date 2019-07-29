@@ -55,8 +55,8 @@ router.post('/',(req,res,next) =>{
 			break;
 	}
 	res.redirect("/stocklist");
-	});
+});
 
 
-})
+
 module.exports = router;
