@@ -13,24 +13,36 @@ router.post('/',(req,res,next) => {
 	var newData = req.body;
 	var myid = 'TestUserID';
 	db.collection(myid).doc(newData.id).delete();
+	db.collection('Score').doc(myid).set({
+		sum: 0
+	},{merge: true});
 	db.collection('Score').doc(myid).get()
-	.then((snapshot) => {
-		score_datas = new Array();
-		snapshot.forEach((doc) => {
-		score_datas.push(doc.data());
-		});
+	.then(doc => {
+		if (!doc.exists) {
+			console.log('No such document!');
+		} else {
+			console.log('Document data:', doc.data());
+			var dt = new Date();
+			var lidt = new Date(newData.limit)
+			var sum = 0;
+			sum = doc.data().sum;
+			console.log(lidt);
+			console.log(dt);
+			if(lidt >= dt){
+				sum = sum + 1;
+			}else if(lidt < dt){
+				sum = sum - 1; 
+			}
+			
+			db.collection('Score').doc(myid).set({
+				sum: sum
+			});
+		}
 	})
 	.catch(err => {
 		console.log('Error getting documents', err);
 	});
-	var sum = 0;
-	if(score_datas[0].sum){
-		sum = score_datas.sum;
-	} 
-		sum = sum + 1;
-	db.collection('Score').doc(myid).set({
-		sum: sum
-	},{merge: true});
+	
 
 
 
