@@ -49,6 +49,8 @@ var history = require('./routes/history');
 var score = require('./routes/score');
 var stocklist = require('./routes/stocklist');
 var input = require('./routes/input');
+var del = require('./routes/delete');
+
 
 
 app.set('views', path.join(__dirname, 'views'));
@@ -65,6 +67,7 @@ app.use('/history',history);
 app.use('/score',score);
 app.use('/stocklist',stocklist);
 app.use('/input',input);
+app.use('/stocklist/delete',del);
 
 
 app.use(express.static(path.join(__dirname, 'public')));

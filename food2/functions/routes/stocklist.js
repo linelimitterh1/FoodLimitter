@@ -52,7 +52,12 @@ router.post('/delete',(req,res,next) => {
 			break;
 	}
 	
-	res.redirect('/stocklist');
+	var data = {
+		title: 消費しました,
+		name: newData.name
+	}
+
+	res.render('del',data);
 });
 router.post('/',(req,res,next) =>{
 
