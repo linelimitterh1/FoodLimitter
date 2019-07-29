@@ -31,10 +31,33 @@ router.get('/',(req,res,next) =>{
 	});
 	
 });
-
+router.post('/delete',(req,res,next) => {
+	var newData = req.body;
+	var newlimit;
+	
+	switch(newData.food){
+		case "牛乳":
+			tmp = Number(newData.limit) - 3;
+			newlimit = String(tmp);
+			db.collection('TestUserID').doc(newData.id).update({
+				limit: newlimit
+			});
+			break;
+		case "ヨーグルト":
+			tmp = Number(newData.limit) - 3;
+			newlimit = String(tmp);
+			db.collection('TestUserID').doc(newData.id).update({
+				limit: newlimit
+			});
+			break;
+	}
+	
+	res.redirect('/stocklist');
+});
 router.post('/',(req,res,next) =>{
 
 	db.collection('TestUserID').doc(req.body.id).delete();
-	res.redirect('/stocklist')
-})
+	res.redirect('/stocklist');
+});
+
 module.exports = router;
