@@ -33,7 +33,7 @@
                                 <td>期限 <%= collection[i].limit %></td>
                                 <td>
                                     開封
-                                    <form action ="/delete" method = post>
+                                    <form action ="" method = post>
                                         <input type="hidden" name="name" value="<%= collection[i].name %>" />
                                         <input type="hidden" name="limit" value="<%= collection[i].limit %>" />
                                         <input type="hidden" name = "id" value = "<%= doc_id[i] %>" /> 
@@ -42,7 +42,8 @@
                                 </td>
                                 <td>
                                     消費済
-                                    <form action = "" method = post>
+                                    <form action = "../eaten" method = post>
+                                        <input type="hidden" name="name" value="<%= collection[i].name %>" />
                                         <input type="hidden" name = "id" value = "<%= doc_id[i] %>" />
                                         <input type="image" src="/images/eated.png" class="check" />
                                     </form>
