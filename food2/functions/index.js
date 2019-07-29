@@ -27,6 +27,7 @@ linebot.post('/webhook', line.middleware(config), (req, res) => {
 
 const client = new line.Client(config);
 
+
 async function handleEvent(event) {
 if (event.type !== 'message' || event.message.type !== 'text') {
   return Promise.resolve(null);
@@ -35,9 +36,11 @@ if (event.type !== 'message' || event.message.type !== 'text') {
 
 return client.replyMessage(event.replyToken, {
   type: 'text',
-  text: event.message.text + 'を受け取りました。'
+    text: event.message.text + 'を受け取りました。'
+
 });
 }
+
 process.on('unhandledRejection', (reason, p) => {
   console.log('Unhandled Rejection at:', p, 'reason:', reason);
   // application specific logging, throwing an error, or other logic here

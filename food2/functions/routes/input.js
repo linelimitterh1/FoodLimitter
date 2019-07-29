@@ -36,6 +36,11 @@ router.post('/' ,(req,res,next) =>{
     }else{
         ldate = newData.limit[1];
     }
+    var option = {
+        url: 'https://api.line.me/v2/profile',
+        method: get
+    }
+
 
     var docRef = db.collection('TestUserID');
     docRef.add({

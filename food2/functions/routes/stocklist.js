@@ -35,6 +35,7 @@ router.get('/',(req,res,next) =>{
 router.post('/',(req,res,next) =>{
 
 	db.collection('TestUserID').doc(req.body.id).delete();
-	res.redirect('/stocklist')
+    res.redirect('/stocklist')
+
 })
 module.exports = router;
