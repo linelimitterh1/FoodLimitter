@@ -5,6 +5,11 @@
         <td>期限: <%= limit %></td>
         <td>
             入力へ
-            <img src="/images/foodlimiter.png" class="check"></img></td>
+            <form action="../input" method = get>
+                <input type="image" src="/images/foodlimiter.png" class="check"></img>
+                <input type="hidden" name="name" value="<%= name %>" />
+                <input type="hidden" name="limit" value="<%= limit %>" />
+            </form>
+        </td>
     </tr>
 </table>

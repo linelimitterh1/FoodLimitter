@@ -13,6 +13,7 @@ const config = {
 
 admin.initializeApp(functions.config().firebase);
 db = admin.firestore();
+storage = admin.storage();
 
 const app = express();
 const linebot = express();

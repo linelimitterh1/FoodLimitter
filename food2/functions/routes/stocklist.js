@@ -13,13 +13,16 @@ router.get('/',(req,res,next) =>{
 	idRef.get()
 	.then((snapshot) => {
 		 ids = new Array();
+		 docs = new Array();
 		snapshot.forEach((doc) => {
 			ids.push(doc.data());
+			docs.push(doc.id);
 		});
 		var data ={
 			title: "一覧",
 			now_date: now_date,
 			collection: ids,
+			doc_id: docs
 		}
 			res.render('stocklist',data);
 	})
@@ -27,7 +30,11 @@ router.get('/',(req,res,next) =>{
 		next(err);
 	});
 	
-	});
-	
+});
 
+router.post('/',(req,res,next) =>{
+
+	db.collection('TestUserID').doc(req.body.id).delete();
+	res.redirect('/stocklist')
+})
 module.exports = router;

@@ -18,18 +18,50 @@
 			<div class="titles"><h1><%= title %></h1></div>
 		</div>
 		
-		<form action="" method="post">
+		<form action="" method="post" >
 			<div class="photo">
 				<h3>写真</h3>
-				<input type="file" accept="image/*" capture>
+				<input type="file" accept="image/*" name = "food_image">
+				<p>
+					<img src = about:blank alt = "" id = show_picture />
+				</p>
+				
 			</div>
-			<div class="name">
+			<div class="food_name">
 				<h3>食品名</h3>
-				<input type="text" name="name">
+				<input type="text" name="food_name" value = <%= name %> >
 			</div>
 			<div class="limit">
 				<h3>期限</h3>
-				<input type="date" name="limit">
+				<select id="date_select">
+					<option value="use">日付あり</option>
+					<option value="no">日付なし</option>
+				</select>
+					
+				<div id="usedate" style="display:block;">
+					<input id="ex_box_a" type="date" name="limit" value= <%=limit %>>
+				</div>
+				<div id="nodate" style="display:none;">
+					<input id="ex_box_a" type="month" name="limit" value= <%=limit %>>
+				</div>
+				<!--入力欄の切り替え-->
+				<script>
+					document.getElementById("date_select").addEventListener("change", function(){
+						var age_elem = document.getElementById("date_select");
+						var s_value = age_elem.options[age_elem.selectedIndex].value;
+						var box_div_elem1 = document.getElementById("usedate");
+						var box_div_elem2 = document.getElementById("nodate");
+
+						if(s_value == "use"){
+							box_div_elem1.style.display = 'block';
+							box_div_elem2.style.display = 'none';
+						}else{
+							box_div_elem1.style.display = 'none';
+							box_div_elem2.style.display = 'block';
+						}
+					}, false);
+					
+				</script>
 			</div>
 			<input type="submit" value="送信する" class="finish"></input>
 		</form>	
