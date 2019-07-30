@@ -28,14 +28,14 @@
                 <% for (var i = 0; i < collection.length; i++){ %>
                     <table>
                             <tr>
-                                <th>写真 <%= image %></th>
-                                <td>名前 <%= name %></td>
-                                <td>期限 <%= limit %></td>
+                                <th>写真 <img src=<%= collection[i].image %>></th>
+                                <td>名前 <%= collection[i].name %></td>
+                                <td>期限 <%= collection[i].limit %></td>
                                 <td>
                                     開封
                                     <form action ="" method = post>
-                                        <input type="hidden" name="name" value="<%= name %>" />
-                                        <input type="hidden" name="limit" value="<%= limit %>" />
+                                        <input type="hidden" name="name" value="<%= collection[i].name %>" />
+                                        <input type="hidden" name="limit" value="<%= collection[i].limit %>" />
                                         <input type="hidden" name = "id" value = "<%= doc_id[i] %>" /> 
                                         <input type ="image" src="/images/open.png" class="check"></img>
                                     </form>    
@@ -43,8 +43,8 @@
                                 <td>
                                     消費済
                                     <form action = "../eaten" method = post>
-                                        <input type="hidden" name="name" value="<%= name %>" />
-                                        <input type="hidden" name="limit" value="<%= limit %>" />
+                                        <input type="hidden" name="name" value="<%= collection[i].name %>" />
+                                        <input type="hidden" name="limit" value="<%= collection[i].limit %>" />
                                         <input type="hidden" name = "id" value = "<%= doc_id[i] %>" />
                                         <input type="image" src="/images/eated.png" class="check" />
                                     </form>

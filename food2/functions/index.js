@@ -14,6 +14,8 @@ const config = {
 admin.initializeApp(functions.config().firebase);
 db = admin.firestore();
 storage = admin.storage();
+const bucket = admin.storage().bucket();
+
 
 const app = express();/*
 const linebot = express();
@@ -55,6 +57,7 @@ var input = require('./routes/input');
 var eaten = require('./routes/eaten');
 var continue_img = require('./routes/continue_image');
 var input_img = require('./routes/input_image');
+var complete = require('./routes/complete');
 
 
 
@@ -75,7 +78,8 @@ app.use('/stocklist',stocklist);
 app.use('/input',input);
 app.use('/eaten',eaten);
 app.use('/continue',continue_img);
-app.use('/input_img',input_img);
+app.use('/input_image',input_img);
+app.use('/complete',complete);
 
 
 app.use(express.static(path.join(__dirname, 'public')));

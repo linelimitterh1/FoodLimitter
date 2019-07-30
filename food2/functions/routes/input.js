@@ -1,12 +1,12 @@
 const admin = require('firebase-admin');
 const functions = require('firebase-functions');
 const multer = require('multer')
-var express = require('express');
+var express =require('express');
 var router = express.Router();
-
 const upload = multer({
     storage: multer.memoryStorage()
 });
+
 router.get('/',(req,res,next) =>{
     var name = "";
     var limit = "";
@@ -36,18 +36,23 @@ router.post('/' ,(req,res,next) =>{
     }else{
         ldate = newData.limit[0];
     }
-    var docRef = db.collection(newData.UserID);
+    /*
+    var option = {
+        url: 'https://api.line.me/v2/profile',
+        method: get
+    }*/
+
+
+    var docRef = db.collection('TestUserID');
     docRef.add({
         'name': newData.food_name,
         'limit': ldate,
-        'image': "/images/no_image.png",
+        'image': newData.food_image,
         'timestamp': admin.firestore.FieldValue.serverTimestamp(),
     })
     var data = {
-        title: "続けて登録",
-        name: "",
-        limit:""
+        title: "画像を入力"
     }
-    res.render('input',data);
+    res.render('input_img',data);
 });
 module.exports = router;
