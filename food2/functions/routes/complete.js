@@ -4,7 +4,7 @@ var express =require('express');
 const multer = require('multer')
 var router = express.Router();
 const upload = multer({
-    storage: multer.diskStorage()
+    storage: multer.memoryStorage()
 });
 const bucket = admin.storage().bucket();
 
@@ -15,18 +15,27 @@ router.get('/',(req,res,next) =>{
 	res.render('complete',data)
 });
 //フォームの値をfirestoreのTestUserIDに格納
-router.post('/' ,upload.single("file"),async(req,res,next) =>{
-    console.log(upload.single("file"));
+router.post('/' ,async(req,res,next) =>{
+    console.log(req.files[0]);
+    const{
+        fieldname,
+        originalname,
+        encoding,
+        mimetype,
+        buffer,
+      } = req.files[0]
     //画像ファイルのアップロード
     const file = bucket.file('path/in/firebase/test.png');
-    try {
-        // hogeはアップロードしたいファイル
-        await file.save(req.file);
-        // contentTypeは別でセットしないとダメ
-        await file.setMetadata({ contentType: 'image/png' });
-    } catch (err) {
-        console.log(err);
-    }
+    const new_file   = bucket.file(originalname);
+        const blobStream = new_file.createWriteStream({
+            metadata:{
+                contentType:mimetype
+            }
+        });
+
+        blobStream.end(buffer,()=>{
+            res.status(200).end();
+        });
     
 
     var idRef = db.collection('TestUserID').orderBy("timestamp",'desc').limit(1);

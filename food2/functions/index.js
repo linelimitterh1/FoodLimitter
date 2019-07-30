@@ -5,6 +5,7 @@ const path = require('path');
 //const line = require('@line/bot-sdk');
 require('date-utils');
 var bodyparser = require('body-parser');
+const fileMiddleWare = require('express-multipart-file-parser');
 
 const config = {
     channelSecret: '7a08fa7a6237d2112caf450b11f4c425', // LINE Developersでの準備②でメモったChannel Secret
@@ -68,6 +69,7 @@ app.set('view engine', 'ejs');
 app.use(bodyparser.json());
 app.use(bodyparser.urlencoded({ extended: false }));
 
+app.use(fileMiddleWare);
 app.use(express.static(path.join(__dirname, 'routes')));
 
 app.use('/', indexRouter);
