@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang=ja>
+	<head>
+        <meta http-equiv="content-type" content="text/html"; charset="UTF-8">
+		<title><%= title %></title>
+        <script src="https://d.line-scdn.net/liff/1.0/sdk.js"></script>
+		<link rel="stylesheet" type="text/css" href="/stylesheets/bootstrap.css">
+        <link rel="stylesheet" type="text/css" href="/stylesheets/stocklist.css">
+	</head>
+
+	<body>
+		<div class="titleba">
+			<div class="move">
+                <button class="back" onclick="location.href='/'">戻る</button>
+                <button class="score" onclick="location.href='/score'">スコア</button>
+			</div>
+			
+			<div class="titles">
+                <h1><%= title %></h1></div>
+		</div>
+        
+        <div class="now">
+            <p><%= name %>を食べ終わりました</p>
+        </div>
+        
+		<footer>
+			<p>&copy; 2019 デザイン総合情報演習 H-1</p>
+		</footer>
+	</body>
+</html>
