@@ -21,13 +21,10 @@ router.post('/',(req,res,next) => {
 		if (!doc.exists) {
 			console.log('No such document!');
 		} else {
-			console.log('Document data:', doc.data());
 			var dt = new Date();
 			var lidt = new Date(newData.limit)
 			var sum = 0;
 			sum = doc.data().sum;
-			console.log(lidt);
-			console.log(dt);
 			if(lidt >= dt){
 				sum = sum + 1;
 			}else if(lidt < dt){
@@ -43,9 +40,6 @@ router.post('/',(req,res,next) => {
 		console.log('Error getting documents', err);
 	});
 	
-
-
-
 	var data = {
 		title: "消費しました",
 		name: newData.name

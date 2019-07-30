@@ -5,6 +5,7 @@ const path = require('path');
 //const line = require('@line/bot-sdk');
 require('date-utils');
 var bodyparser = require('body-parser');
+const fileMiddleWare = require('express-multipart-file-parser');
 
 const config = {
     channelSecret: '7a08fa7a6237d2112caf450b11f4c425', // LINE Developersでの準備②でメモったChannel Secret
@@ -14,6 +15,8 @@ const config = {
 admin.initializeApp(functions.config().firebase);
 db = admin.firestore();
 storage = admin.storage();
+const bucket = admin.storage().bucket();
+
 
 const app = express();/*
 const linebot = express();
@@ -53,6 +56,9 @@ var score = require('./routes/score');
 var stocklist = require('./routes/stocklist');
 var input = require('./routes/input');
 var eaten = require('./routes/eaten');
+var continue_img = require('./routes/continue_image');
+var input_img = require('./routes/input_image');
+var complete = require('./routes/complete');
 
 
 
@@ -63,6 +69,7 @@ app.set('view engine', 'ejs');
 app.use(bodyparser.json());
 app.use(bodyparser.urlencoded({ extended: false }));
 
+app.use(fileMiddleWare);
 app.use(express.static(path.join(__dirname, 'routes')));
 
 app.use('/', indexRouter);
@@ -72,6 +79,9 @@ app.use('/score',score);
 app.use('/stocklist',stocklist);
 app.use('/input',input);
 app.use('/eaten',eaten);
+app.use('/continue',continue_img);
+app.use('/input_image',input_img);
+app.use('/complete',complete);
 
 
 app.use(express.static(path.join(__dirname, 'public')));

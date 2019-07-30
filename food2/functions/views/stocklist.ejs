@@ -3,23 +3,18 @@
 	<head>
         <meta http-equiv="content-type" content="text/html"; charset="UTF-8">
         <title><%= title %></title>
-		<script type="text/javascript" src="//code.jquery.com/jquery-2.2.4.min.js"></script>
-        <script src="https://d.line-scdn.net/liff/1.0/sdk.js"></script> 
+        <script type="text/javascript" src="//code.jquery.com/jquery-2.2.4.min.js"></script>
+        <script src="https://d.line-scdn.net/liff/1.0/sdk.js"></script>
 		<link rel="stylesheet" type="text/css" href="/stylesheets/bootstrap.css">
         <link rel="stylesheet" type="text/css" href="/stylesheets/stocklist.css">
 	</head>
 
 	<body>
 		<div class="titleba">
-			<div class="move">
-                <button class="back" onclick="location.href='/'">戻る</button>
-                <button class="score" onclick="location.href='/score'">スコア</button>
-			</div>
-			
 			<div class="titles">
                 <h1><%= title %></h1></div>
-        </div>
-       
+		</div>
+        
         <div class="now">
             <p>
                 今日は<br><%= now_date %></span>
@@ -29,7 +24,7 @@
                 <% for (var i = 0; i < collection.length; i++){ %>
                     <table>
                             <tr>
-                                <th>写真</th>
+                                <th>写真 <img src=<%= collection[i].image %> height="300" width="300"></th>
                                 <td>名前 <%= collection[i].name %></td>
                                 <td>期限 <%= collection[i].limit %></td>
                                 <td>
@@ -59,9 +54,8 @@
                         </table>
                 <% } %>
         </div>
-       
 		<footer>
-			<p>&copy; 2019 デザイン総合情報演習 H-1</p>
+			<p>&copy; 2019 デザイン情報総合演習 H-1</p>
 		</footer>
 	</body>
 </html>
