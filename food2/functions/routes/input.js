@@ -17,7 +17,6 @@ router.get('/',(req,res,next) =>{
     if(hisData.limit != ""){
         limit = hisData.limit;
     }
-    console.log(hisData);
     var data = {
         title: "入力",
         name: name,
@@ -29,7 +28,8 @@ router.get('/',(req,res,next) =>{
 
 //フォームの値をfirestoreのTestUserIDに格納
 router.post('/' ,(req,res,next) =>{
-    var newData =req.body;  
+    var newData = req.body;  
+    console.log(newData);
     var ldate;
     if(newData.limit[0] == ""){
         ldate = newData.limit[1];
@@ -47,7 +47,7 @@ router.post('/' ,(req,res,next) =>{
     docRef.add({
         'name': newData.food_name,
         'limit': ldate,
-        'image': "写真",
+        'image': "/images/no_image.png",
         'timestamp': admin.firestore.FieldValue.serverTimestamp(),
     })
     var data = {
