@@ -10,10 +10,7 @@ var userId;
 var dt = new Date();
 var now_date = dt.toFormat("YYYY年MM月DD日(DDD)");
 
-router.get('/',(req,res,next) =>{
-	console.log(url.parse(req.url,true).query)
-	console.log(url.parse(req.url,false).query)
-	userId=url.parse(req.url).query.slice(0,-1);//末尾=
+router.get('/',(req,res,next) =>{userId=url.parse(req.url).query.slice(0,-1);//末尾=
 	var idRef = db.collection(userId).orderBy("limit");
 	idRef.get()
 	.then((snapshot) => {
