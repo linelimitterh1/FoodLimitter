@@ -53,6 +53,8 @@ var score = require('./routes/score');
 var stocklist = require('./routes/stocklist');
 var input = require('./routes/input');
 var eaten = require('./routes/eaten');
+var continue_img = require('./routes/continue_image');
+var input_img = require('./routes/input_image');
 
 
 
@@ -71,6 +73,8 @@ app.use('/score',score);
 app.use('/stocklist',stocklist);
 app.use('/input',input);
 app.use('/eaten',eaten);
+app.use('/continue',continue_img);
+app.use('/input_img',input_img);
 
 
 app.use(express.static(path.join(__dirname, 'public')));
