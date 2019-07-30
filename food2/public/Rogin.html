@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang=ja>
+	<head>
+        <meta http-equiv="content-type" content="text/html"; charset="UTF-8">
+        <title>redirect</title>
+		<script type="text/javascript" src="//code.jquery.com/jquery-2.2.4.min.js"></script>
+        <script src="https://d.line-scdn.net/liff/1.0/sdk.js"></script> 
+	</head>
+
+	<body>		
+        <div id="test">リダイレクト</div> 
+        <script type="text/javascript">
+        console.log("TEST");
+            $(function(){document.getElementById("test").innerHTML = "PGSF"
+                //var ReURL = location.search
+            ReURL="/stocklist"
+             liff.init(
+                 data => {document.getElementById("test").innerHTML = "OK"
+                 var UserID = data.context.userId;
+                 document.getElementById("test").innerHTML = UserID;
+                 window.location.href="https://die-h1-test.firebaseapp.com"+ReURL+"?"+UserID;
+                 document.getElementById("test").innerHTML = "https://die-h1-test.firebaseapp.com"+ReURL+"?"+UserID;
+                })})
+                 </script>
+        <footer>
+        <p>&copy; 2019 デザイン総合情報演習 H-1</p>
+    </footer>
+</body>
+</html>

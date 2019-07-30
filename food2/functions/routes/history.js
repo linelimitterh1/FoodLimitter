@@ -1,8 +1,9 @@
 var express =require('express');
 var router = express.Router();
 
+
 router.get('/',(req,res,next) =>{
-    var idRef = db.collection('TestUserID').orderBy("timestamp",'desc').limit(5);
+    var idRef = db.collection().orderBy("timestamp",'desc').limit(5);
 	idRef.get()
 	.then((snapshot) => {
 		 hists = new Array();

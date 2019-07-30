@@ -1,15 +1,20 @@
 //stocklistのjs
 const admin = require('firebase-admin');
 const functions = require('firebase-functions');
+url = require('url');
 var express =require('express');
 var router = express.Router();
 
 //現在の時刻を取得・表示
+var userId;
 var dt = new Date();
 var now_date = dt.toFormat("YYYY年MM月DD日(DDD)");
 
 router.get('/',(req,res,next) =>{
-	var idRef = db.collection('TestUserID').orderBy("limit");
+	console.log(url.parse(req.url,true).query)
+	console.log(url.parse(req.url,false).query)
+	userId=url.parse(req.url).query.slice(0,-1);//末尾=
+	var idRef = db.collection(userId).orderBy("limit");
 	idRef.get()
 	.then((snapshot) => {
 		ids = new Array();

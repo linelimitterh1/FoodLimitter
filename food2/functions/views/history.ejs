@@ -3,6 +3,7 @@
 	<head>
         <meta http-equiv="content-type" content="text/html"; charset="UTF-8">
 		<title><%= title %></title>
+		<script type="text/javascript" src="//code.jquery.com/jquery-2.2.4.min.js"></script>
         <script src="https://d.line-scdn.net/liff/1.0/sdk.js"></script>
 		<link rel="stylesheet" type="text/css" href="/stylesheets/bootstrap.css">
 		<link rel="stylesheet" type="text/css" href="/stylesheets/history.css">
@@ -14,17 +15,13 @@
                 <button class="back" onclick="location.href='/'">戻る</button>
                 <button class="input" onclick="location.href='/input'">完了</button>
 			</div>
-			
 			<div class="titles"><h1><%= title %></h1></div>
 		</div>
-
         <div class="histories">
             <% for (var i = 0; i < collection.length; i++){ %>
             <%- include("history_items.ejs",collection[i]); %>
             <% } %>
-        </div>
-		
-		
+		</div>
 		
 		<footer>
 			<p>&copy; 2019 デザイン総合情報演習 H-1</p>
