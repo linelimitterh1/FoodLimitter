@@ -2,7 +2,7 @@ const admin = require('firebase-admin');
 const functions = require('firebase-functions');
 const express = require('express');
 const path = require('path');
-const line = require('@line/bot-sdk');
+//const line = require('@line/bot-sdk');
 require('date-utils');
 var bodyparser = require('body-parser');
 
@@ -15,7 +15,7 @@ admin.initializeApp(functions.config().firebase);
 db = admin.firestore();
 storage = admin.storage();
 
-const app = express();
+const app = express();/*
 const linebot = express();
 linebot.post('/webhook', line.middleware(config), (req, res) => {
   console.log(req.body.events);
@@ -45,7 +45,7 @@ process.on('unhandledRejection', (reason, p) => {
   console.log('Unhandled Rejection at:', p, 'reason:', reason);
   // application specific logging, throwing an error, or other logic here
 });
-exports.linebot = functions.https.onRequest(linebot);
+exports.linebot = functions.https.onRequest(linebot);*/
 const indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
 var history = require('./routes/history');
@@ -55,6 +55,7 @@ var input = require('./routes/input');
 var eaten = require('./routes/eaten');
 var continue_img = require('./routes/continue_image');
 var input_img = require('./routes/input_image');
+
 
 
 
