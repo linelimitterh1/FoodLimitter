@@ -1,12 +1,12 @@
 const admin = require('firebase-admin');
 const functions = require('firebase-functions');
 const multer = require('multer')
-var express =require('express');
+var express = require('express');
 var router = express.Router();
+
 const upload = multer({
     storage: multer.memoryStorage()
 });
-
 router.get('/',(req,res,next) =>{
     var name = "";
     var limit = "";
@@ -36,13 +36,7 @@ router.post('/' ,(req,res,next) =>{
     }else{
         ldate = newData.limit[0];
     }
-    var option = {
-        url: 'https://api.line.me/v2/profile',
-        method: get
-    }
-
-
-    var docRef = db.collection('TestUserID');
+    var docRef = db.collection(newData.UserID);
     docRef.add({
         'name': newData.food_name,
         'limit': ldate,
