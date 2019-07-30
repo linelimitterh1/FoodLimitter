@@ -25,7 +25,7 @@ router.post('/' ,async(req,res,next) =>{
         buffer,
       } = req.files[0]
     //画像ファイルのアップロード
-    const file = bucket.file('path/in/firebase/test.png');
+    //const file = bucket.file('path/in/firebase/'+ originalname);
     const new_file   = bucket.file(originalname);
         const blobStream = new_file.createWriteStream({
             metadata:{
