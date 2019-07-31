@@ -14,8 +14,8 @@ router.get('/',(req,res,next) =>{userId=url.parse(req.url).query.slice(0,-1);//�
 	var idRef = db.collection(userId).orderBy("limit");
 	idRef.get()
 	.then((snapshot) => {
-		ids = new Array();
-		docs = new Array();
+		var ids = new Array();
+		var docs = new Array();
 		snapshot.forEach((doc) => {
 			ids.push(doc.data());
 			docs.push(doc.id);
@@ -24,7 +24,8 @@ router.get('/',(req,res,next) =>{userId=url.parse(req.url).query.slice(0,-1);//�
 			title: "一覧",
 			now_date: now_date,
 			collection: ids,
-			doc_id: docs
+			doc_id: docs,
+			userId: userId
 		}
 			res.render('stocklist',data);
 	})
@@ -43,7 +44,7 @@ router.post('/',(req,res,next) =>{
 		case "牛乳":
 			dt.setDate(dt.getDate() + 3);
 			var newlimit = dt.toFormat("YYYY-MM-DD")
-			db.collection('TestUserID').doc(newData.id).update({
+			db.collection(userId).doc(newData.id).update({
 				limit: newlimit
 			});
 			break;
@@ -51,12 +52,30 @@ router.post('/',(req,res,next) =>{
 			dt.setDate(dt.getDate() + 3);
 			var newlimit = dt.toFormat("YYYY-MM-DD");
 			console.log(newlimit);
-			db.collection('TestUserID').doc(newData.id).update({
+			db.collection(userId).doc(newData.id).update({
 				limit: newlimit
 			});
 			break;
 	}
-	res.redirect("/stocklist");
+	var idRef = db.collection(userId).orderBy("limit");
+	idRef.get()
+	.then((snapshot) => {
+		var ids = new Array();
+		var docs = new Array();
+		snapshot.forEach((doc) => {
+			ids.push(doc.data());
+			docs.push(doc.id);
+		});
+		var data ={
+			title: "一覧",
+			now_date: now_date,
+			collection: ids,
+			doc_id: docs,
+			userId: userId
+		}
+		res.render("stocklist",data);
+	})
+	
 });
 
 

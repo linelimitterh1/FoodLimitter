@@ -1,12 +1,12 @@
 <table>
     <tr>
-        <th>写真<img src=<%= image %>> /></th>
+        <th>写真<img src="<%= image %>" /></th>
         <td>名前: <%= name %></td>
         <td>期限: <%= limit %></td>
         <td>
             入力へ
             <form action="../input" method = get>
-                <input type="image" src="/images/foodlimiter.png" class="check"></img>
+                <input type="image" src="/images/foodlimiter.png" class="check">
                 <input type="hidden" name="name" value="<%= name %>" />
                 <input type="hidden" name="limit" value="<%= limit %>" />
             </form>

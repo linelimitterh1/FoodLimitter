@@ -14,7 +14,7 @@
 		
 		<div class="titleba">
 			<div class="button_history">
-				<button class="rireki" onclick="location.href='/history'">履歴</button>
+				<button id="his" class="rireki" onclick="location.href='/history'">履歴</button>
 			</div>		
 			<div class="titles"><h1><%= title %></h1></div>
 		</div>
@@ -65,7 +65,7 @@
 			data => {
 			userId = data.context.userId;
 			document.getElementById("_UserID").value = userId
-			document.getElementById("his").onclick=location.href='/history?'+userId;
+			document.getElementById("his").onclick="location.href='/history?'+userId";
 			})})
 			</script>
 		   		

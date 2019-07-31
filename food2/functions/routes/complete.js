@@ -45,14 +45,11 @@ router.post('/' ,async(req,res,next) =>{
 		snapshot.forEach((doc) => {
 			comps.push(doc.id);
         });
-        functions.storage.object().onFinalize((object) => {
-        const bucketName = 'die-h1-test.appspot.com'; // ご自身の
-        const filePath = object.name;
+        const bucketName = 'die-h1-test.appspot.com';
+        console.log(comps);
         db.collection("TestUserID").doc(comps[0]).update({
-            filePath,
-            image: `https://firebasestorage.googleapis.com/v0/b/${bucketName}/o/${encodeURIComponent(filePath)}?alt=media`
-        }).then(() => console.log('Done')); // eslint-disable-line no-console
-        });
+            image: `gs://die-h1-test.appspot.com/`+originalname
+        })
         
 
 		var data ={

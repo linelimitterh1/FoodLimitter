@@ -11,7 +11,7 @@ router.get('/',(req,res,next) => {
 
 router.post('/',(req,res,next) => {
 	var newData = req.body;
-	var myid = 'TestUserID';
+	var myid = newData.userID;
 	db.collection(myid).doc(newData.id).delete();
 	db.collection('Score').doc(myid).set({
 		sum: 0
