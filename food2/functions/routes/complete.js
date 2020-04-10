@@ -14,7 +14,7 @@ router.get('/',(req,res,next) =>{
 	}
 	res.render('complete',data)
 });
-//フォームの値をfirestoreのTestUserIDに格納
+
 router.post('/' ,async(req,res,next) =>{
     console.log(req.files[0]);
     const{

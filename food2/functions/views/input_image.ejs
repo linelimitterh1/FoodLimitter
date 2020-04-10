@@ -14,10 +14,18 @@
 		</div>
 		<h3>写真</h3>
 		<form action="../complete" method="post" enctype="multipart/form-data">
-        	<input type="file" accept="image/*" name = "file">    
+			<input type="file" accept="image/*" name = "file">    
+			 
 			<input type="submit" value="送信する" class="finish"></input>
 		</form>	
-		
+		<script>
+			$(function(){
+			liff.init(
+				data => {
+				userId = data.context.userId;
+				document.getElementById("_UserID").value = userId
+				})})
+				</script>
 		<footer>
 			<p>&copy; 2019 デザイン情報総合演習 H-1</p>
 		</footer>

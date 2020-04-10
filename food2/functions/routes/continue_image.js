@@ -23,7 +23,7 @@ router.post('/' ,(req,res,next) =>{
         url: 'https://api.line.me/v2/profile',
         method: get
     }*/
-    var docRef = db.collection('TestUserID');
+    var docRef = db.collection(newData.UserID);
     docRef.add({
         'name': newData.food_name,
         'limit': ldate,
